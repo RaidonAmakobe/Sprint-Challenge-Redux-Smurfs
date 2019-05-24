@@ -24,3 +24,17 @@ export const DELETING = "DELETING";
 */
 
 const endpoint = "http://localhost:3333";
+
+export const getter = () => {
+  const smurfs = axios.get(`${endpoint}`);
+  return dispatch => {
+    dispatch({ type: GETTING});
+    smurfs
+      .then(response => {
+        dispatch({ type: GET, payload: response.data});
+      })
+      .catch(error => {
+        dispatch({ type: Error, payload: error});
+      });
+  };
+};
