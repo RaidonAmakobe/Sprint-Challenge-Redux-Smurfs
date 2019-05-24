@@ -25,4 +25,4 @@ class Smurf extends Component {
 export default connect(
     null,
     {}
-)(Smurf)
+)(Smurf);

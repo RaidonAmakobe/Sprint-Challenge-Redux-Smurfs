@@ -25,18 +25,18 @@ export const ERROR = "ERROR";
    D - deleteSmurf
 */
 
-const endpoint = "http://localhost:3333";
+const endpoint = "http://localhost:3333/smurfs";
 
 export const getRequest = () => {
   const smurfs = axios.get(`${endpoint}`);
   return dispatch => {
-    dispatch({ type: GETTING});
+    dispatch({ type: GETTING });
     smurfs
       .then(response => {
-        dispatch({ type: GET, payload: response.data});
+        dispatch({ type: GET, payload: response.data });
       })
       .catch(error => {
-        dispatch({ type: ERROR, payload: error});
+        dispatch({ type: ERROR, payload: error });
       });
   };
 };
