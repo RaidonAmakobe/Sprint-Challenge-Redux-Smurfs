@@ -25,7 +25,7 @@ export const DELETING = "DELETING";
 
 const endpoint = "http://localhost:3333";
 
-export const getter = () => {
+export const getRequest = () => {
   const smurfs = axios.get(`${endpoint}`);
   return dispatch => {
     dispatch({ type: GETTING});
@@ -35,6 +35,20 @@ export const getter = () => {
       })
       .catch(error => {
         dispatch({ type: Error, payload: error});
+      });
+  };
+};
+
+export const postRequest = smurf => {
+  const newSmurf = axios.post(`${endpoint}`, smurf);
+  return dispatch => {
+    dispatch({ type: CREATING});
+    newSmurf
+      .then(({ data }) => {
+        dispatch({ type: CREATE, payload: data});
+      })
+      .catch(err => {
+        dispatch({type: ERROR, payload: err});
       });
   };
 };
