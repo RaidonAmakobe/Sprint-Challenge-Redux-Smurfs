@@ -9,6 +9,7 @@ export const GETTING = "GETTING";
 export const CREATE = "CREATE";
 export const CREATING = "CREATING";
 export const UPDATE = "UPDATE";
+export const UPDATING = "UPDATING";
 export const DELETE = "DELETE";
 export const DELETING = "DELETING";
 export const ERROR = "ERROR";
