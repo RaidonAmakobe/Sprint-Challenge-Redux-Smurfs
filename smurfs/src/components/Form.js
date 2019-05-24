@@ -55,3 +55,15 @@ class newForm extends Component {
         );
     }
 }
+
+const mapStateToProps = state => {
+    return {
+        error: state.error,
+        creatingSmurf: state.creatingSmurf
+    };
+};
+
+export default connect(
+    mapStateToProps,
+    { postRequest }
+) (newForm);
