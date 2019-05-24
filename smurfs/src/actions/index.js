@@ -11,6 +11,7 @@ export const CREATING = "CREATING";
 export const UPDATE = "UPDATE";
 export const DELETE = "DELETE";
 export const DELETING = "DELETING";
+export const ERROR = "ERROR";
 
 /*
   For this project you'll need at least 2 action creators for the main portion,
@@ -34,7 +35,7 @@ export const getRequest = () => {
         dispatch({ type: GET, payload: response.data});
       })
       .catch(error => {
-        dispatch({ type: Error, payload: error});
+        dispatch({ type: ERROR, payload: error});
       });
   };
 };
