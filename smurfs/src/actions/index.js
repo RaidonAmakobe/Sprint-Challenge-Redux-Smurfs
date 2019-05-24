@@ -22,3 +22,5 @@ export const DELETING = "DELETING";
    U - updateSmurf
    D - deleteSmurf
 */
+
+const endpoint = "http://localhost:3333";
